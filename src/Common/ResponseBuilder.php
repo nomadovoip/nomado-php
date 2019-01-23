@@ -6,13 +6,16 @@ class ResponseBuilder
 {
     protected $response;
 
-    public function __construct(\GuzzleHttp\Psr7\Response $httpResponse = null)
+    public function __construct($httpResponse = null)
     {
         $this->response = new Response();
         if ($httpResponse) {
-            $this->withCode($httpResponse->getStatusCode())
-                ->withData($httpResponse->getBody())
-                ->withReason($httpResponse->getReasonPhrase());
+            if ($httpResponse instanceof \GuzzleHttp\Psr7\Response) {
+                $httpResponse = json_decode($httpResponse->getBody(), true);
+            }
+            $this->withCode(empty($httpResponse['code']) ? null : $httpResponse['code'])
+                ->withData(empty($httpResponse['data']) ? [] : $httpResponse['data'])
+                ->withReason(empty($httpResponse['reason']) ? '' : $httpResponse['reason']);
         }
     }
 
@@ -52,7 +55,7 @@ class ResponseBuilder
      */
     public function withData($data)
     {
-        $this->response->data = json_decode($data, true);
+        $this->response->data = $data;
         return $this;
     }
 
