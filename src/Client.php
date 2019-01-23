@@ -2,6 +2,7 @@
 
 namespace Nomado;
 
+use Nomado\Api\Hlr;
 use Nomado\Api\Otp;
 use Nomado\Api\Sms;
 use Nomado\Common\Authentication;
@@ -26,5 +27,6 @@ class Client
 
         $this->sms = new Sms($nomadoClient);
         $this->otp = new Otp($nomadoClient);
+        $this->hlr = new Hlr($nomadoClient);
     }
 }
