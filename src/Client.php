@@ -2,6 +2,7 @@
 
 namespace Nomado;
 
+use Nomado\Api\Account;
 use Nomado\Api\Calls;
 use Nomado\Api\Hlr;
 use Nomado\Api\Otp;
@@ -33,7 +34,7 @@ class Client
      */
     public $calls;
     /**
-     * @var
+     * @var Account
      */
     public $account;
 
@@ -47,5 +48,6 @@ class Client
         $this->otp = new Otp($nomadoClient);
         $this->hlr = new Hlr($nomadoClient);
         $this->calls = new Calls($enswitchClient);
+        $this->account = new Account($enswitchClient);
     }
 }

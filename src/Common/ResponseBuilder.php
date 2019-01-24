@@ -6,16 +6,19 @@ class ResponseBuilder
 {
     protected $response;
 
+    /**
+     * ResponseBuilder constructor.
+     */
     public function __construct($httpResponse = null)
     {
         $this->response = new Response();
         if ($httpResponse) {
             if ($httpResponse instanceof \GuzzleHttp\Psr7\Response) {
-                $httpResponse = json_decode($httpResponse->getBody(), true);
+                $httpResponse = json_decode($httpResponse->getBody());
             }
-            $this->withCode(empty($httpResponse['code']) ? null : $httpResponse['code'])
-                ->withData(empty($httpResponse['data']) ? [] : $httpResponse['data'])
-                ->withReason(empty($httpResponse['reason']) ? '' : $httpResponse['reason']);
+            $this->withCode(empty($httpResponse->code) ? null : $httpResponse->code)
+                ->withData(empty($httpResponse->data) ? [] : $httpResponse->data)
+                ->withReason(empty($httpResponse->reason) ? '' : $httpResponse->reason);
         }
     }
 

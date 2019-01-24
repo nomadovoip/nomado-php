@@ -18,7 +18,7 @@ class Api
         $this->httpClient = $httpClient;
     }
 
-    protected function missing($options, $requiredParams = null)
+    protected function _missing($options, $requiredParams = null)
     {
         if ($requiredParams) {
             return array_filter($requiredParams, function ($key) use ($options) {
@@ -37,7 +37,7 @@ class Api
      */
     protected function _call($endpoint, $method = 'post', $options = null, $requiredParams = null)
     {
-        $missingParams = $this->missing($options, $requiredParams);
+        $missingParams = $this->_missing($options, $requiredParams);
         if ($missingParams) {
             return $this->responseBuilder()
                 ->withCode(400)
@@ -45,6 +45,13 @@ class Api
                 ->get();
         }
 
-        return $this->httpClient->{$method}($endpoint, $options);
+        try {
+            return $this->httpClient->{$method}($endpoint, $options);
+        } catch(\Exception $ex) {
+            return $this->responseBuilder()
+                ->withCode(400)
+                ->withReason($ex->getMessage())
+                ->get();
+        }
     }
 }

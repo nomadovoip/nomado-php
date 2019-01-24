@@ -16,7 +16,7 @@ abstract class AbstractHttpClient
     /**
      * @var Authentication
      */
-    protected $Authentication;
+    public $Authentication;
     protected $serverUrl;
 
     public function __construct($serverUrl, Authentication $Authentication)

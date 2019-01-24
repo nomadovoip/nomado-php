@@ -13,6 +13,7 @@ class Authentication
     ];
     protected $token;
     protected $jwt;
+    protected $customerInfo;
 
     public function __construct($options = array())
     {
@@ -78,6 +79,22 @@ class Authentication
             case 'TOKEN' :
                 return 'BEARER ' . $this->token;
                 break;
+        }
+    }
+
+    /**
+     * @param $customer
+     */
+    public function setCustomer($customer) {
+        $this->customerInfo = $customer;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCustomerId() {
+        if ($this->customerInfo) {
+            return $this->customerInfo->customer;
         }
     }
 }

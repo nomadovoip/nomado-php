@@ -26,17 +26,17 @@ class Enswitch extends AbstractHttpClient
     }
 
     protected function formatResponse(\GuzzleHttp\Psr7\Response $httpResponse) {
-        $responseBody = json_decode($httpResponse->getBody(), true);
-        $formattedResponse = [];
+        $responseBody = json_decode($httpResponse->getBody());
+        $formattedResponse = new \stdClass();
 
-        if (!empty($responseBody['responses'])) {
-            $formattedResponse = is_array($responseBody['responses']) ? $responseBody['responses'][0] : $responseBody;
-            if (!empty($formattedResponse['message'])) {
-                $formattedResponse['reason'] = $formattedResponse['message'];
+        if (!empty($responseBody->responses)) {
+            $formattedResponse = is_array($responseBody->responses) ? $responseBody->responses[0] : $responseBody;
+            if (!empty($formattedResponse->message)) {
+                $formattedResponse->reason = $formattedResponse->message;
             }
         }
-        if (!empty($responseBody['data'])) {
-            $formattedResponse['data'] = $responseBody['data'];
+        if (!empty($responseBody->data)) {
+            $formattedResponse->data = $responseBody->data;
         }
         return $formattedResponse;
     }
