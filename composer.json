@@ -19,7 +19,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Nomado\\": "src/"
+      "Nomado\\": "src/",
+      "NomadoTest\\": "tests/"
     }
   }
 }

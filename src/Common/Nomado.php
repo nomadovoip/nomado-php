@@ -16,14 +16,16 @@ class Nomado extends AbstractHttpClient
     }
 
     /**
-     * @param \GuzzleHttp\Psr7\Request $request
+     * @param $endpoint
      * @param array $options
+     * @param string $method
      * @return mixed|\Psr\Http\Message\ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function send($request, $options = [])
+    public function send($endpoint, $options = [], $method = 'POST')
     {
         try {
+            $request = $this->makeRequest($method, $endpoint);
             $options = array_merge(['headers' => $this->headers], $options);
             $response = $this->client->send($request, $options);
             return $this->responseBuilder($response)->get();

@@ -17,7 +17,7 @@ class ResponseBuilder
                 $httpResponse = json_decode($httpResponse->getBody());
             }
             $this->withCode(empty($httpResponse->code) ? null : $httpResponse->code)
-                ->withData(empty($httpResponse->data) ? [] : $httpResponse->data)
+                ->withData(empty($httpResponse->data) ? new \stdClass() : $httpResponse->data)
                 ->withReason(empty($httpResponse->reason) ? '' : $httpResponse->reason);
         }
     }
@@ -53,7 +53,7 @@ class ResponseBuilder
     }
 
     /**
-     * @param string $data
+     * @param array $data
      * @return ResponseBuilder
      */
     public function withData($data)

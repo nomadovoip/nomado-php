@@ -12,7 +12,7 @@ abstract class AbstractHttpClient
     /**
      * @var \GuzzleHttp\Client
      */
-    protected $client;
+    public $client;
     /**
      * @var Authentication
      */
@@ -46,9 +46,7 @@ abstract class AbstractHttpClient
      */
     public function get($endpoint, $params = null)
     {
-        $request = $this->makeRequest('GET', $endpoint);
-        return $this->send($request, ['query' => $params]);
-
+        return $this->send($endpoint, ['query' => $params], 'GET');
     }
 
     /**
@@ -58,9 +56,7 @@ abstract class AbstractHttpClient
      */
     public function post($endpoint, $params = null)
     {
-        $request = $this->makeRequest('POST', $endpoint);
-
-        return $this->send($request, ['json' => $params]);
+        return $this->send($endpoint, ['json' => $params], 'POST');
     }
 
     /**

@@ -18,16 +18,6 @@ class Api
         $this->httpClient = $httpClient;
     }
 
-    protected function _missing($options, $requiredParams = null)
-    {
-        if ($requiredParams) {
-            return array_filter($requiredParams, function ($key) use ($options) {
-                return !isset($options[$key]);
-            });
-        }
-        return null;
-    }
-
     /**
      * @param $endpoint
      * @param $options
@@ -45,13 +35,16 @@ class Api
                 ->get();
         }
 
-        try {
-            return $this->httpClient->{$method}($endpoint, $options);
-        } catch(\Exception $ex) {
-            return $this->responseBuilder()
-                ->withCode(400)
-                ->withReason($ex->getMessage())
-                ->get();
+        return $this->httpClient->{$method}($endpoint, $options);
+    }
+
+    protected function _missing($options, $requiredParams = null)
+    {
+        if ($requiredParams) {
+            return array_filter($requiredParams, function ($key) use ($options) {
+                return !isset($options[$key]);
+            });
         }
+        return null;
     }
 }

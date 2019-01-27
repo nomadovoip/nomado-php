@@ -18,11 +18,11 @@ class Response
      * @param $reason
      * @param array $data
      */
-    public function __construct($code = 200, $message = '', $reason = null, array $data = [])
+    public function __construct($code = 200, $message = '', $reason = null, array $data = null)
     {
         $this->code = $code;
         $this->message = $message;
         $this->reason = $reason;
-        $this->data = $data;
+        $this->data = $data ?: new \stdClass();
     }
 }
