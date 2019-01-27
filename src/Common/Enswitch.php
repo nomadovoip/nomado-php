@@ -42,14 +42,16 @@ class Enswitch extends AbstractHttpClient
     }
 
     /**
-     * @param \GuzzleHttp\Psr7\Request $request
+     * @param $endpoint
      * @param array $options
+     * @param string $method
      * @return mixed|\Psr\Http\Message\ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function send($request, $options = [])
+    public function send($endpoint, $options = [], $method = 'GET')
     {
         try {
+            $request = $this->makeRequest($method, $endpoint);
             $options = $this->addCredentials($options);
             $httpResponse = $this->client->send($request, $options);
             $formattedResponse = $this->formatResponse($httpResponse);
