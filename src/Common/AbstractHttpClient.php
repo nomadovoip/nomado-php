@@ -25,7 +25,8 @@ abstract class AbstractHttpClient
         $this->Authentication = $Authentication;
 
         $this->client = new \GuzzleHttp\Client([
-            'base_uri' => $serverUrl
+            'base_uri' => $serverUrl,
+            'http_errors' => false
         ]);
     }
 

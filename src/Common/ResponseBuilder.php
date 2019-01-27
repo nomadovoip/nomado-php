@@ -18,6 +18,7 @@ class ResponseBuilder
             }
             $this->withCode(empty($httpResponse->code) ? null : $httpResponse->code)
                 ->withData(empty($httpResponse->data) ? new \stdClass() : $httpResponse->data)
+                ->withMessage(empty($httpResponse->message) ? '' : $httpResponse->message)
                 ->withReason(empty($httpResponse->reason) ? '' : $httpResponse->reason);
         }
     }
