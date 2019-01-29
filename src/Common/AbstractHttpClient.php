@@ -1,9 +1,9 @@
 <?php
 
-namespace Nomado\Common;
+namespace nomado\Common;
 
 use GuzzleHttp\Psr7\Request;
-use Nomado\Traits\ResponseTrait;
+use nomado\Traits\ResponseTrait;
 
 abstract class AbstractHttpClient
 {

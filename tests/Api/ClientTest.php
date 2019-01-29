@@ -1,16 +1,16 @@
 <?php
 
-namespace NomadoTest\Api;
+namespace nomadoTest\Api;
 
-use Nomado\Api\Account;
-use Nomado\Api\Calls;
-use Nomado\Api\Hlr;
-use Nomado\Api\Otp;
-use Nomado\Api\Sms;
-use Nomado\Client;
-use Nomado\Common\Authentication;
-use Nomado\Common\Enswitch;
-use Nomado\Common\Nomado;
+use nomado\Api\Account;
+use nomado\Api\Calls;
+use nomado\Api\Hlr;
+use nomado\Api\Otp;
+use nomado\Api\Sms;
+use nomado\Client;
+use nomado\Common\Authentication;
+use nomado\Common\Enswitch;
+use nomado\Common\nomado;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
 {

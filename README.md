@@ -1,5 +1,5 @@
-![Nomado Logo](https://www.nomado.eu/nom_website/static/img/nomado-logo.png)
-# PHP SDK for the Nomado API
+![nomado Logo](https://www.nomado.eu/nom_website/static/img/nomado-logo.png)
+# PHP SDK for the nomado API
 <div>
   <h3>
     <a href="https://www.nomado.eu">
@@ -21,10 +21,10 @@
 </div>
 
 ## Introduction
-Nomado is a telephony and SMS solution for businesses and private customers.
+nomado is a telephony and SMS solution for businesses and private customers.
 Our goal is to provide super user-friendly tools to meet your growing needs of nomadism.
 
-This package provides a client to access the Nomado API.
+This package provides a client to access the nomado API.
 
 ## Table of Contents
 
@@ -54,7 +54,7 @@ $credentials = [
     'password' => 'password'
 ];
 
-$nomado = new \Nomado\Client($credentials);
+$nomado = new \nomado\Client($credentials);
 
 $response = $nomado->sms->send([
                     'to' => [32123456789],
@@ -66,7 +66,7 @@ var_dump($response);
 ```
 
 ## Documentation
-The `\Nomado\Client` class provides the public interfaces to access the Nomado API
+The `\nomado\Client` class provides the public interfaces to access the nomado API
 * `SMS`
 * `OTP`
 * `Calls`
@@ -74,9 +74,9 @@ The `\Nomado\Client` class provides the public interfaces to access the Nomado A
 * `Account`
 
 ### Authentication
-First, initialize the library with your Nomado credentials.
+First, initialize the library with your nomado credentials.
 ````php
-$nomado = new \Nomado\Client(['username' => 'username',
+$nomado = new \nomado\Client(['username' => 'username',
                               'password' => 'password'
                              ]);
 ````

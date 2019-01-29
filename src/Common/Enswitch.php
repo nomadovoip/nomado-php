@@ -1,6 +1,6 @@
 <?php
 
-namespace Nomado\Common;
+namespace nomado\Common;
 
 
 class Enswitch extends AbstractHttpClient

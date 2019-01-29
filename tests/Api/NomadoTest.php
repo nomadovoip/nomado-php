@@ -1,11 +1,11 @@
 <?php
 
-namespace NomadoTest\Api;
+namespace nomadoTest\Api;
 
-use Nomado\Common\Authentication;
-use Nomado\Common\Nomado;
+use nomado\Common\Authentication;
+use nomado\Common\nomado;
 
-class NomadoTest extends \PHPUnit_Framework_TestCase
+class nomadoTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testCredentials()
@@ -26,8 +26,8 @@ class NomadoTest extends \PHPUnit_Framework_TestCase
 
         $httpClient->expects($this->once())->method('send')->with($this->anything(), $options);
 
-        $Nomado = new Nomado($authentication);
-        $Nomado->client = $httpClient;
-        $Nomado->post('/test', ['key' => 'value']);
+        $nomado = new nomado($authentication);
+        $nomado->client = $httpClient;
+        $nomado->post('/test', ['key' => 'value']);
     }
 }

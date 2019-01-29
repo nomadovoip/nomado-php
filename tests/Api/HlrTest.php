@@ -1,8 +1,8 @@
 <?php
 
-namespace NomadoTest\Api;
-use NomadoTest\Common;
-use Nomado\Api\Hlr;
+namespace nomadoTest\Api;
+use nomadoTest\Common;
+use nomado\Api\Hlr;
 
 class HlrTest extends Common
 {
@@ -13,9 +13,9 @@ class HlrTest extends Common
 
     public function setUp()
     {
-        $this->mockNomado();
+        $this->mocknomado();
         $this->hlr = new Hlr($this->httpClient);
-        $this->httpClient->method('send')->willReturn((new \Nomado\Common\ResponseBuilder())->get());
+        $this->httpClient->method('send')->willReturn((new \nomado\Common\ResponseBuilder())->get());
     }
 
     public function testFetch()

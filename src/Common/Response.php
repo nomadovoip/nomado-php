@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Nomado\Common;
+namespace nomado\Common;
 
 
 class Response

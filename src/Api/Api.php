@@ -1,9 +1,9 @@
 <?php
 
-namespace Nomado\Api;
+namespace nomado\Api;
 
-use Nomado\Common\AbstractHttpClient;
-use Nomado\Traits\ResponseTrait;
+use nomado\Common\AbstractHttpClient;
+use nomado\Traits\ResponseTrait;
 
 class Api
 {
@@ -23,7 +23,7 @@ class Api
      * @param $options
      * @param array $requiredParams
      * @param string $method
-     * @return \Nomado\Common\Response
+     * @return \nomado\Common\Response
      */
     protected function _call($endpoint, $method = 'post', $options = null, $requiredParams = null)
     {

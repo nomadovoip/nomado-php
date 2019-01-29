@@ -1,8 +1,8 @@
 <?php
 
-namespace Nomado\Api;
+namespace nomado\Api;
 
-use Nomado\Common\Response;
+use nomado\Common\Response;
 
 class Sms extends Api
 {

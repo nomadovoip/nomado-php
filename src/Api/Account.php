@@ -1,6 +1,6 @@
 <?php
 
-namespace Nomado\Api;
+namespace nomado\Api;
 
 class Account extends Api
 {

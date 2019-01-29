@@ -1,9 +1,9 @@
 <?php
 
-namespace NomadoTest\Api;
+namespace nomadoTest\Api;
 
-use Nomado\Api\Account;
-use NomadoTest\Common;
+use nomado\Api\Account;
+use nomadoTest\Common;
 
 class AccountTest extends Common
 {
@@ -28,7 +28,7 @@ class AccountTest extends Common
     public function testGetBalance()
     {
         $this->mockLogin();
-        $this->httpClient->method('send')->willReturn((new \Nomado\Common\ResponseBuilder())->get());
+        $this->httpClient->method('send')->willReturn((new \nomado\Common\ResponseBuilder())->get());
 
         $expected = ['query' => ['id' => 1]];
         $this->httpClient->expects($this->once())->method('send')->with('customers/get/', $expected, 'GET');
@@ -40,7 +40,7 @@ class AccountTest extends Common
         $customerInfo = new \stdClass();
         $customerInfo->customer = 1;
 
-        $response = (new \Nomado\Common\ResponseBuilder())
+        $response = (new \nomado\Common\ResponseBuilder())
             ->withCode(200)
             ->withData($customerInfo)
             ->get();

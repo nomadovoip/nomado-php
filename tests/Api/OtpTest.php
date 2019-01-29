@@ -1,8 +1,8 @@
 <?php
 
-namespace NomadoTest\Api;
-use Nomado\Api\Otp;
-use NomadoTest\Common;
+namespace nomadoTest\Api;
+use nomado\Api\Otp;
+use nomadoTest\Common;
 
 class OtpTest extends Common
 {
@@ -14,9 +14,9 @@ class OtpTest extends Common
 
     public function setUp()
     {
-        $this->mockNomado();
+        $this->mocknomado();
         $this->otp = new Otp($this->httpClient);
-        $this->httpClient->method('send')->willReturn((new \Nomado\Common\ResponseBuilder())->get());
+        $this->httpClient->method('send')->willReturn((new \nomado\Common\ResponseBuilder())->get());
     }
 
     public function testCreate()

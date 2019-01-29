@@ -1,17 +1,17 @@
 <?php
 
-namespace NomadoTest;
+namespace nomadoTest;
 
-use Nomado\Common\Authentication;
+use nomado\Common\Authentication;
 use PHPUnit\Framework\TestCase;
 
 class Common extends TestCase
 {
     protected $httpClient;
 
-    public function mockNomado()
+    public function mocknomado()
     {
-        $this->mockHttpClient(\Nomado\Common\Nomado::class);
+        $this->mockHttpClient(\nomado\Common\nomado::class);
     }
 
     protected function mockHttpClient($class)
@@ -29,6 +29,6 @@ class Common extends TestCase
 
     public function mockEnswitch()
     {
-        $this->mockHttpClient(\Nomado\Common\Enswitch::class);
+        $this->mockHttpClient(\nomado\Common\Enswitch::class);
     }
 }

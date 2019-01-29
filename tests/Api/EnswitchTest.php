@@ -1,9 +1,9 @@
 <?php
 
-namespace NomadoTest\Api;
+namespace nomadoTest\Api;
 
-use Nomado\Common\Authentication;
-use Nomado\Common\Enswitch;
+use nomado\Common\Authentication;
+use nomado\Common\Enswitch;
 
 class EnswitchTest extends \PHPUnit_Framework_TestCase
 {

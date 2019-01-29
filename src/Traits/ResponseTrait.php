@@ -1,8 +1,8 @@
 <?php
 
-namespace Nomado\Traits;
+namespace nomado\Traits;
 use GuzzleHttp\Psr7\Response;
-use Nomado\Common\ResponseBuilder;
+use nomado\Common\ResponseBuilder;
 
 trait ResponseTrait {
     /**

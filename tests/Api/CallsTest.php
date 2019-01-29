@@ -1,9 +1,9 @@
 <?php
 
-namespace NomadoTest\Api;
+namespace nomadoTest\Api;
 
-use Nomado\Api\Calls;
-use NomadoTest\Common;
+use nomado\Api\Calls;
+use nomadoTest\Common;
 
 class CallsTest extends Common
 {
@@ -16,7 +16,7 @@ class CallsTest extends Common
     {
         $this->mockEnswitch();
         $this->calls = new Calls($this->httpClient);
-        $this->httpClient->method('send')->willReturn((new \Nomado\Common\ResponseBuilder())->get());
+        $this->httpClient->method('send')->willReturn((new \nomado\Common\ResponseBuilder())->get());
     }
 
     public function testMake()

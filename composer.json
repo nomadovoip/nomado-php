@@ -1,11 +1,11 @@
 {
 	"name": "nomado/nomado",
-	"description": "SDK to make requests to the Nomado API",
+	"description": "SDK to make requests to the nomado API",
 	"type": "library",
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "Nomado Telecom SPRL",
+			"name": "nomado Telecom SPRL",
 			"email": "developer@nomado.eu"
 		}
 	],
@@ -19,8 +19,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Nomado\\": "src/",
-			"NomadoTest\\": "tests/"
+			"nomado\\": "src/",
+			"nomadoTest\\": "tests/"
 		}
 	},
 	"version": "1.0.1"

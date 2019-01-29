@@ -1,19 +1,19 @@
 <?php
 
-namespace Nomado;
+namespace nomado;
 
-use Nomado\Api\Account;
-use Nomado\Api\Calls;
-use Nomado\Api\Hlr;
-use Nomado\Api\Otp;
-use Nomado\Api\Sms;
-use Nomado\Common\Authentication;
-use Nomado\Common\Enswitch;
-use Nomado\Common\Nomado;
+use nomado\Api\Account;
+use nomado\Api\Calls;
+use nomado\Api\Hlr;
+use nomado\Api\Otp;
+use nomado\Api\Sms;
+use nomado\Common\Authentication;
+use nomado\Common\Enswitch;
+use nomado\Common\nomado;
 
 /**
  * Class Client
- * @package Nomado
+ * @package nomado
  */
 class Client
 {
@@ -41,7 +41,7 @@ class Client
     public function __construct($credentials)
     {
         $authentication = new Authentication($credentials);
-        $nomadoClient = new Nomado($authentication);
+        $nomadoClient = new nomado($authentication);
         $enswitchClient = new Enswitch($authentication);
 
         $this->sms = new Sms($nomadoClient);

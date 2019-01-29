@@ -1,9 +1,9 @@
 <?php
 
-namespace Nomado\Common;
+namespace nomado\Common;
 
 
-class Nomado extends AbstractHttpClient
+class nomado extends AbstractHttpClient
 {
     const SERVER_URL = 'https://api.nomado.eu';
     protected $headers;

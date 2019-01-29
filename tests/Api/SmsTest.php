@@ -1,8 +1,8 @@
 <?php
-namespace NomadoTest\Api;
+namespace nomadoTest\Api;
 
-use Nomado\Api\Sms;
-use NomadoTest\Common;
+use nomado\Api\Sms;
+use nomadoTest\Common;
 
 class SmsTest extends Common
 {
@@ -14,9 +14,9 @@ class SmsTest extends Common
 
     public function setUp()
     {
-        $this->mockNomado();
+        $this->mocknomado();
         $this->sms = new Sms($this->httpClient);
-        $this->httpClient->method('send')->willReturn((new \Nomado\Common\ResponseBuilder())->get());
+        $this->httpClient->method('send')->willReturn((new \nomado\Common\ResponseBuilder())->get());
     }
 
     public function testSend()
