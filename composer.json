@@ -22,6 +22,5 @@
 			"nomado\\": "src/",
 			"nomadoTest\\": "tests/"
 		}
-	},
-	"version": "1.0.3"
+	}
 }
