@@ -41,7 +41,7 @@ class Client
     public function __construct($credentials)
     {
         $authentication = new Authentication($credentials);
-        $nomadoClient = new nomado($authentication);
+        $nomadoClient = new Nomado($authentication);
         $enswitchClient = new Enswitch($authentication);
 
         $this->sms = new Sms($nomadoClient);
