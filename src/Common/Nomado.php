@@ -3,7 +3,7 @@
 namespace nomado\Common;
 
 
-class nomado extends AbstractHttpClient
+class Nomado extends AbstractHttpClient
 {
     const SERVER_URL = 'https://api.nomado.eu';
     protected $headers;
